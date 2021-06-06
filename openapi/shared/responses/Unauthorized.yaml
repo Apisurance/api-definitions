@@ -1,0 +1,11 @@
+description: Unauthorized. The intended action is not allowed using the provided API token.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error summary
+          example: Unauthorized.
+

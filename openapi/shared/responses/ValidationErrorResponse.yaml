@@ -1,0 +1,23 @@
+description: Invalid data provided
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error summary
+          example: The given data was invalid
+        errors:
+          description: Breakdown of invalid values
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+              description: Error messages for the specific field defined in the key
+          example:
+            firstName:
+              - Must be at least 4 characters
+              - Must not contain emojis
+

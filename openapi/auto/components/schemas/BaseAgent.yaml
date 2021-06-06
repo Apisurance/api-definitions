@@ -1,0 +1,15 @@
+type: object
+properties:
+  id:
+    description: Agent identifier code or number
+    type: string
+  name:
+    description: Agent name
+    type: string
+  email:
+    description: Agent's email address
+    type: string
+    format: email
+  phoneNumber:
+    description: Agent's phone number
+    type: string

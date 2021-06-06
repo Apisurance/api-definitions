@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    description: Vehicle model code or ID
+    type: string
+    example: vantage-roadster
+  name:
+    description: Vehicle model name
+    type: string
+    example: Vantage Roadster

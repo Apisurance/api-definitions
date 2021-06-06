@@ -1,0 +1,42 @@
+type: object
+properties:
+  contactFullName:
+    type: string
+    description: Address contact's full name
+    example: Jane Doe
+  contactMobileNumber:
+    type: string
+    format: E.164
+    pattern: ^\+?[1-9]\d{1,14}$
+    description: Address contact's mobile number in ISO E.164 format.
+    example: +639191234567
+  contactPhoneNumber:
+    type: string
+    format: E.164
+    pattern: ^\+?[1-9]\d{1,14}$
+    description: Address contact's phone number in ISO E.164 format.
+    example: +63464401234
+  addressLine1:
+    type: string
+    description: Address line 1
+    example: #23 Runway St.
+  addressLine2:
+    type: string
+    description: Address line 2
+  city:
+    type: string
+    description: Address city
+    example: Pasay City
+  state:
+    type: string
+    description: Address state or province
+    example: Metro Manila
+  countryCode:
+    type: string
+    format: ISO Alpha-2 Code
+    description: Address country code in ISO Alpha-2 Code format.
+    example: PH
+  postalCode:
+    type: string
+    description: Address postal code
+    example: 4107

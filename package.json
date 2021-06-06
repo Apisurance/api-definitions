@@ -1,0 +1,17 @@
+{
+  "name": "apisurance-api-definitions",
+  "version": "1.0.0",
+  "description": "Insurance E-Commerce Platform & API",
+  "main": "index.js",
+  "repository": "git@github.com:apisurance/api-definitions.git",
+  "author": "esamonte@reconn.com.ph",
+  "private": true,
+  "dependencies": {
+    "@redocly/openapi-cli": "^1.0.0-beta.48"
+  },
+  "scripts": {
+    "serve": "openapi preview-docs ./openapi/index.yaml",
+    "serve:internal": "openapi preview-docs --skip-decorator=apisurance/remove-internal-operations ./openapi/index.yaml",
+    "stats": "openapi stats ./openapi/index.yaml"
+  }
+}

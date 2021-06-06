@@ -1,0 +1,137 @@
+type: object
+required:
+  - make
+  - model
+  - year
+properties:
+  id:
+    description: Quotation identifier
+    type: string
+    readOnly: true
+    examples:
+      - 100012345
+      - Q2-Q88484848-B
+  make:
+    description: |
+      Vehicle maker/brand ID or code.
+
+      See [List of Makers](#operation/ListMakers)
+    type: string
+    example: aston-martin
+  model:
+    description: |
+      Vehicle model ID or code
+    type: string
+    example: vantage-roadster
+  year:
+    description: |
+      Vehicle model year of release
+    type: integer
+    example: 2021
+  plateNumber:
+    description: |
+      Vehicle plate number
+    type: string
+    example: ABS 1234
+  country:
+    description: Country of jurisdiction where the insurance will be applied
+    type: string
+    example: PH
+  coverage:
+    type: object
+    description: |
+      Breakdown of intended coverage.
+    properties:
+      main:
+        description: |
+          Cover value of the vehicle to be insured in case of own damage and/or theft.
+        type: number
+        minimum: 1.00
+        example: 2999999
+      actsOfNature:
+        description: |
+          Cover for damages by acts of nature
+        oneOf:
+          - description: |
+              Include cover for damages by acts of nature as provided by the carrier
+            type: boolean
+            example: true
+          - description: |
+              Value of cover for damages by acts of nature.
+            type: number
+            minimum: 1.00
+            example: 2999999
+      tplBodilyInjury:
+        description: |
+          Cover for damages causing bodily injury.
+        oneOf:
+            - description: |
+                Include cover for damages causing bodily injury as provided by the carrier.
+              type: boolean
+              example: true
+            - description: |
+                Value of cover for damages causing bodily injury.
+              type: number
+              minimum: 1.00
+              example: 2999999
+      tplPropertyDamage:
+        description: |
+          Cover for damages causing property damage.
+        oneOf:
+            - description: |
+                Include cover for damages causing property damage as provided by the carrier.
+              type: boolean
+              example: true
+            - description: |
+                Value of cover for damages causing property damage.
+              type: number
+              minimum: 1.00
+              example: 2999999
+      personalAccident:
+        description: |
+          Cover for damages causing personal accident.
+        oneOf:
+            - description: |
+                Include cover for damages causing personal accident as provided by the carrier.
+              type: boolean
+              example: true
+            - description: |
+                Value of cover for damages causing personal accident.
+              type: number
+              minimum: 1.00
+              example: 2999999
+      roadsideAssistance:
+        description: |
+          Cover for roadside assistance.
+        oneOf:
+            - description: |
+                Include cover for roadside assistance as provided by the carrier.
+              type: boolean
+              example: true
+            - description: |
+                Value of cover for roadside assistance.
+              type: number
+              minimum: 1.00
+              example: 2999999
+      towingService:
+        description: |
+          Cover for towing service.
+        oneOf:
+            - description: |
+                Include cover for towing service as provided by the carrier.
+              type: boolean
+              example: true
+            - description: |
+                Value of cover for towing service.
+              type: number
+              minimum: 1.00
+              example: 2999999
+  agent:
+    allOf:
+      - description: Handling agent
+      - $ref: ./BaseAgent.yaml
+
+
+
+
+

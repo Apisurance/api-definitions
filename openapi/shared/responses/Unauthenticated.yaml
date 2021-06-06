@@ -1,0 +1,11 @@
+description: Unauthenticated. Missing or expired API token.
+content:
+  application/json:
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error summary
+          example: Unauthenticated.
+

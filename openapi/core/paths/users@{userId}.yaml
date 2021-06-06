@@ -1,0 +1,51 @@
+parameters:
+  - name: userId
+    in: path
+    description: The User's identifier
+    required: true
+    type: number
+    example: 4321
+
+get:
+  tags:
+    - Users
+  summary: Retrieve User Account
+  x-internal: true
+  operationId: GetUser
+  description: |
+    Retrieve user account details
+  responses:
+    '200':
+      description: A user account was retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/User.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
+
+put:
+  tags:
+    - Users
+  summary: Update a User
+  operationId: UpdateUser
+  description: |
+    Update a user account
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/User.yaml
+    description: User resource
+    required: true
+  responses:
+    '200':
+      description: A user account was updated successfully
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

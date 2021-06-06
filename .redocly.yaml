@@ -1,0 +1,42 @@
+apiDefinitions:
+  core: openapi/index.yaml
+lint:
+  rules:
+    no-unused-schemas: warning
+  extends:
+    - recommended
+  plugins:
+    - './plugins/xInternal.js'
+  decorators:
+    apisurance/remove-internal-operations: error
+referenceDocs:
+  showConsole: true
+  layout:
+    scope: section
+  routingStrategy: browser
+  theme:
+    logo:
+      gutter: 20px 30px 14px 30px
+    colors:
+      text:
+        primary: '#333333'
+    typography:
+      headings:
+        fontFamily: Montserrat
+        fontWeight: 600
+      fontFamily: 'Open Sans, Montserrat, sans-serif'
+      fontSize: 15px
+      code:
+        fontFamily: '"Courier New",monospace'
+        tokens:
+          token.property:
+            color: '#aofbaa'
+          string:
+            color: '#aofbaa'
+      rightPanelHeading:
+        color: white
+    rightPanel:
+      backgroundColor: '#263238'
+    links:
+      color: '#6CC496'
+  htmlTemplate: ./web/serve.html

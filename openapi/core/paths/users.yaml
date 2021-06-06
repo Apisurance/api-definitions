@@ -1,0 +1,19 @@
+
+
+get:
+  tags:
+    - Users
+  summary: List All Users
+  x-internal: true
+  operationId: ListUsers
+  description: |
+    List all users
+  responses:
+    '200':
+      description: A list of users was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../schemas/User.yaml

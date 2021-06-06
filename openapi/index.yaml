@@ -1,0 +1,25 @@
+openapi: 3.0.3
+info:
+  version: '1.0'
+  title: Apisurance API
+  contact:
+    name: Apisurance API Support
+    email: api@apisurance.com
+  x-logo:
+    url: 'apisurance-logo.svg'
+servers:
+  - url: 'https://api.apisurance.com/v1'
+    description: Live API Server
+  - url: 'https://api-sandbox.apisurance.com'
+    description: Sandbox API Server
+paths:
+  $ref: ./paths.yaml
+tags:
+  $ref: ./tags.yaml
+x-tagGroups:
+  - name: Core
+    tags:
+      - Users
+  - name: Auto
+    tags:
+      - Quotations

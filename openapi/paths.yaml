@@ -1,0 +1,11 @@
+## Core
+/users:
+    $ref: ./core/paths/users.yaml
+/users/{userId}:
+    $ref: ./core/paths/users@{userId}.yaml
+
+## AUTO
+/auto/test:
+    $ref: ./auto/paths/quotes.yaml
+
+

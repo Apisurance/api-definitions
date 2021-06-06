@@ -1,0 +1,10 @@
+type: object
+properties:
+  id:
+    description: Vehicle maker or brand code or ID
+    type: string
+    example: aston-martin
+  name:
+    description: Vehicle maker or brand name
+    type: string
+    example: Aston Martin

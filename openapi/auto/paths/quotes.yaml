@@ -1,0 +1,21 @@
+post:
+  tags:
+    - Quotations
+  summary: Request a Quotation
+  operationId: RequestQuotation
+  description: |
+    Create a quotation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../components/schemas/Quote.yaml
+    description: Quote resource
+    required: true
+  responses:
+    '201':
+      description: A quotation was generated successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../components/schemas/Quote.yaml

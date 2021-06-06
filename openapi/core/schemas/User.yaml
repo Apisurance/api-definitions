@@ -1,0 +1,53 @@
+type: object
+required:
+  - firstName
+  - middleName
+  - lastName
+  - email
+properties:
+  id:
+    type: number
+    description: User identifier
+    example: 4321
+    readOnly: true
+  firstName:
+    type: string
+    description: User's first name
+    example: John
+  middleName:
+    type: string
+    description: User's middle name
+    example: Marshall
+  lastName:
+    type: string
+    description: User's last name
+    example: Doe
+  fullName:
+    type: string
+    description: |
+      User's full name.
+
+      _Use this property only as an alternative to providing the first name, middle name and last name individually._
+  email:
+    type: string
+    format: email
+    description: User's email address
+  password:
+    type: string
+    minimum: 8
+    description: User's password
+    writeOnly: true
+  passwordConfirmation:
+    type: string
+    minimum: 8
+    description: User's confirmation of the chosen password
+    writeOnly: true
+  leadProfileId:
+    type: number
+    description: Attached lead profile
+  billingAddress:
+    description: Billing address
+    $ref: ../../shared/properties/Address.yaml
+  contactAddress:
+    description: Contact address
+    $ref: ../../shared/properties/Address.yaml

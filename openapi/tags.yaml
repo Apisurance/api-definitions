@@ -1,0 +1,8 @@
+## Core
+- name: Users
+  description: Users
+
+## Auto
+- name: Quotations
+  description: |
+    Create and manage quotations
