@@ -32,6 +32,12 @@ properties:
     type: string
     format: email
     description: User's email address
+  contactNumber:
+    type: string
+    format: E.164
+    pattern: ^\+?[1-9]\d{1,14}$
+    description: User's contact number in ISO E.164 format.
+    example: +639191234567
   password:
     type: string
     minimum: 8

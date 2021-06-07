@@ -1,10 +1,7 @@
-
-
 get:
   tags:
     - Users
   summary: List All Users
-  x-internal: true
   operationId: ListUsers
   description: |
     List all users
@@ -17,3 +14,25 @@ get:
             type: array
             items:
               $ref: ../schemas/User.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
+post:
+  tags:
+    - Users
+  summary: Register a User
+  operationId: RegisterUser
+  description: |
+    Register a User
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/User.yaml
+    required: true
+  responses:
+    '204':
+      description: A user account was registered successfully
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml

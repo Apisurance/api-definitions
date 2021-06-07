@@ -2,6 +2,10 @@ openapi: 3.0.3
 info:
   version: '1.0'
   title: Apisurance API
+  description: Apisurance API Documentation
+  license:
+    name: "Apisurance"
+    url: "https://apisurance.com/license"
   contact:
     name: Apisurance API Support
     email: api@apisurance.com

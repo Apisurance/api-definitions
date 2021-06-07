@@ -1,0 +1,29 @@
+post:
+  tags:
+    - Users
+  summary: Deactivate Users
+  operationId: DeactivateUsers
+  description: |
+    Deactivate user accounts.
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: number
+                description: User identifier
+                example: 4321
+    required: true
+  responses:
+    '204':
+      description: A set of user accounts was deactivated successfully
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

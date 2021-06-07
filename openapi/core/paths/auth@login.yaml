@@ -1,0 +1,56 @@
+parameters:
+  - name: x-app-id
+    in: header
+    description: The App's identifier
+    required: true
+    example: app_1XSKAJMSDFM13MA1
+
+post:
+  tags:
+    - Users
+  summary: Generate User Token
+  operationId: GenerateUserToken
+  description: |
+    Generate a token for a user
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - username
+            - password
+          properties:
+            username:
+              type: string
+              description: User's email or contact number
+              example: demo@example.com
+            password:
+              type: string
+              description: User's password
+    description: Login credentials
+    required: true
+  responses:
+    '200':
+      description: A token was generated successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              type:
+                type: string
+                description: |
+                  Token type
+                enum:
+                  - bearer
+              token:
+                description: Authentication token string
+                type: string
+                example: 1kwadsdsoij12oi2i1jnk21jb24b4
+              expiration:
+                description: Token expiration timestamp in Unix format
+                type: number
+                example: 1623083704
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml

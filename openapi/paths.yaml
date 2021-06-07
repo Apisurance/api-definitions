@@ -1,8 +1,14 @@
 ## Core
+/auth/login:
+    $ref: ./core/paths/auth@login.yaml
+/auth/reset-password:
+    $ref: ./core/paths/auth@resetPassword.yaml
 /users:
     $ref: ./core/paths/users.yaml
 /users/{userId}:
     $ref: ./core/paths/users@{userId}.yaml
+/users/deactivate:
+    $ref: ./core/paths/users@deactivate.yaml
 
 ## AUTO
 /auto/test:

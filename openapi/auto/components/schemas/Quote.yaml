@@ -8,7 +8,7 @@ properties:
     description: Quotation identifier
     type: string
     readOnly: true
-    examples:
+    example:
       - 100012345
       - Q2-Q88484848-B
   make:

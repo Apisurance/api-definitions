@@ -10,8 +10,9 @@
     "@redocly/openapi-cli": "^1.0.0-beta.48"
   },
   "scripts": {
-    "serve": "openapi preview-docs ./openapi/index.yaml",
-    "serve:internal": "openapi preview-docs --skip-decorator=apisurance/remove-internal-operations ./openapi/index.yaml",
-    "stats": "openapi stats ./openapi/index.yaml"
+    "serve": "npx @redocly/openapi-cli preview-docs ./openapi/index.yaml",
+    "serve:internal": "npx @redocly/openapi-cli preview-docs --skip-decorator=apisurance/remove-internal-operations ./openapi/index.yaml",
+    "stats": "npx @redocly/openapi-cli stats ./openapi/index.yaml",
+    "lint": "npx @redocly/openapi-cli lint ./openapi/index.yaml"
   }
 }
