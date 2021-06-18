@@ -1,16 +1,17 @@
 get:
   tags:
     - Vehicle Specs
-  summary: List Makers
+  summary: List Auto Makers
   operationId: ListMakers
   description: |
-    List all vehicle makers/brands
+    List all vehicle automakers
   responses:
     '200':
-      description: A list of makers was retrieved successfully
+      description: A list of auto makers was retrieved successfully
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: ../schemas/Maker.yaml
+              type: string
+              example: TOYOTA

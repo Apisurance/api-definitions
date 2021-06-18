@@ -1,19 +1,19 @@
 parameters:
   - name: makerId
     in: path
-    description: The Maker's identifier
+    description: The Automaker's identifier
     required: true
     schema:
       type: integer
-      example: 4321
+      example: TOYOTA
 
 get:
   tags:
     - Vehicle Specs
-  summary: List Models of a Maker
+  summary: List Models of an Automaker
   operationId: ListMakerModels
   description: |
-    List all models of a maker
+    List all models of an automaker
   parameters:
     - name: year
       in: query
@@ -24,10 +24,10 @@ get:
         example: 2015
   responses:
     '200':
-      description: A list of models was retrieved successfully
+      description: A list of automaker models was retrieved successfully
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: ../schemas/Model.yaml
+              type: string
