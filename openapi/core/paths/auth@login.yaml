@@ -9,6 +9,7 @@ post:
   tags:
     - Users
   summary: Generate User Token
+  x-internal: true
   operationId: GenerateUserToken
   description: |
     Generate a token for a user

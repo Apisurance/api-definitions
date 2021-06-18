@@ -1,16 +1,16 @@
 post:
   tags:
-    - Quotations
+    - Auto Quotations
   summary: Request a Quotation
   operationId: RequestQuotation
   description: |
-    Create a quotation
+    Request a quotation
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../components/schemas/Quote.yaml
-    description: Quote resource
+          $ref: ../schemas/QuoteRequest.yaml
+    description: Quote Request resource
     required: true
   responses:
     '201':

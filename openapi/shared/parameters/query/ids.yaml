@@ -1,0 +1,17 @@
+in: query
+name: ids
+schema:
+  type: array
+  description: List of Resource IDs
+  items:
+    oneOf:
+      - type: integer
+        example:
+          - 4321
+          - 1245
+          - 5555
+      - type: string
+        example:
+          - "app_1235663234"
+          - "key_1235XXs124"
+

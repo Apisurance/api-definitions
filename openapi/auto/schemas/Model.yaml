@@ -1,0 +1,20 @@
+type: object
+properties:
+  id:
+    type: number
+    description: Model's identifier
+    example: 4321
+    readOnly: true
+  makerId:
+    type: number
+    description: Model maker's identifier
+    example: 4321
+    readOnly: true
+  name:
+    type: string
+    description: Model's name
+    example: Vios 1.3 M/T Gas
+  yearReleased:
+    type: integer
+    description: Model's year of release
+    example: 2016

@@ -1,0 +1,7 @@
+type: object
+properties:
+  createdAt:
+    description: Resource's creation timestamp
+    readOnly: true
+    allOf:
+      - $ref: ../properties/Timestamp.yaml

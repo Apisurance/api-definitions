@@ -1,0 +1,8 @@
+in: header
+name: x-collection-limit
+schema:
+  type: integer
+  description: Collection size/count limit
+  default: 10
+  example: 10
+

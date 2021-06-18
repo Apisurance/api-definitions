@@ -1,0 +1,8 @@
+type: string
+description: Offer type
+enum:
+  - life-insurance
+  - auto-insurance
+  - health-insurance
+  - parcel-insurance
+  - reinsurance

@@ -1,0 +1,4 @@
+type: string
+format: date-time
+readOnly: true
+example: "2021-05-26T09:06:49.000000Z"

@@ -1,0 +1,42 @@
+get:
+  tags:
+    - Carriers
+  summary: List All Carriers
+  operationId: ListCarriers
+  parameters:
+    - $ref: ../../shared/parameters/header/collectionLimit.yaml
+    - $ref: ../../shared/parameters/header/collectionOffset.yaml
+    - in: query
+      name: offerTypes
+      schema:
+        anyOf:
+          - type: array
+            items:
+              allOf:
+                - description: |
+                    List of offer types.
+
+                    Example: `&f:offerTypes[]=life-insurance&f:offerTypes[]=auto-insurance`
+                - $ref: ../../shared/properties/OfferType.yaml
+          - allOf:
+              - description: |
+                  List of offer types in CSV format.
+
+                  Example: `&f:offerTypes=life-insurance,auto-insurance`
+              - $ref: ../../shared/properties/OfferType.yaml
+  description: |
+    List all active carriers
+  responses:
+    '200':
+      description: A list of carriers was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: ../schemas/Carrier.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

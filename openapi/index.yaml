@@ -24,6 +24,11 @@ x-tagGroups:
   - name: Core
     tags:
       - Users
+      - Organizations
+      - Carriers
+      - Policies
+      - Permissions
   - name: Auto
     tags:
-      - Quotations
+      - Vehicle Specs
+      - Auto Quotations

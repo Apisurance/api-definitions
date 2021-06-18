@@ -1,0 +1,26 @@
+get:
+  tags:
+    - Policies
+  summary: List All Policy Summaries
+  operationId: ListPolicySummaries
+  parameters:
+    - $ref: ../../shared/parameters/header/collectionLimit.yaml
+    - $ref: ../../shared/parameters/header/collectionOffset.yaml
+  description: |
+    List all policy summaries
+  responses:
+    '200':
+      description: A list of policies was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: ../schemas/PolicySummary.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+                - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

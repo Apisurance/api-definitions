@@ -1,0 +1,38 @@
+type: object
+properties:
+  firstName:
+    type: string
+    description: User's first name
+    example: John
+  middleName:
+    type: string
+    description: User's middle name
+    example: Marshall
+  lastName:
+    type: string
+    description: User's last name
+    example: Doe
+  fullName:
+    type: string
+    description: |
+      User's full name.
+
+      _Use this property only as an alternative to providing the first name, middle name and last name individually._
+  email:
+    type: string
+    format: email
+    description: User's email address
+  contactNumber:
+    type: string
+    format: E.164
+    pattern: ^\+?[1-9]\d{1,14}$
+    description: User's contact number in ISO E.164 format.
+    example: +639191234567
+  billingAddress:
+    allOf:
+      - description: User's billing address
+      - $ref: ../../shared/properties/Address.yaml
+  contactAddress:
+    allOf:
+      - description: User's contact address
+      - $ref: ../../shared/properties/Address.yaml

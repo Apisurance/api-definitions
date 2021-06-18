@@ -1,16 +1,16 @@
 get:
   tags:
-    - Auto
-  summary: List All Makers
+    - Vehicle Specs
+  summary: List Makers
   operationId: ListMakers
   description: |
     List all vehicle makers/brands
   responses:
     '200':
-      description: A list of audiences was retrieved successfully
+      description: A list of makers was retrieved successfully
       content:
         application/json:
           schema:
             type: array
             items:
-              $ref: ../components/schemas/Audience.yaml
+              $ref: ../schemas/Maker.yaml

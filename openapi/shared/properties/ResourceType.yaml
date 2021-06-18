@@ -1,0 +1,22 @@
+type: string
+description: Resource type
+enum:
+  - user
+  - organization
+  - permission
+  - auto-quotation
+  - auto-application
+  - auto-order
+  - auto-claim
+  - auto-policy
+  - auto-driver-profile
+  - auto-vehicle
+  - auto-certificate
+  - life-quotation
+  - life-application
+  - life-order
+  - life-claim
+  - life-policy
+  - life-insured-profile
+  - lead-list
+  - lead

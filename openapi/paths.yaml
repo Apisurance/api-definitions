@@ -7,11 +7,25 @@
     $ref: ./core/paths/users.yaml
 /users/{userId}:
     $ref: ./core/paths/users@{userId}.yaml
-/users/deactivate:
-    $ref: ./core/paths/users@deactivate.yaml
+/organizations:
+    $ref: ./core/paths/organizations.yaml
+/organizations/{organizationId}:
+    $ref: ./core/paths/organizations@{organizationId}.yaml
+/permissions/check:
+    $ref: ./core/paths/permissions@check.yaml
+/carriers:
+    $ref: ./core/paths/carriers.yaml
+/policies:
+    $ref: ./core/paths/policies.yaml
+/policies/{policyId}/cancel:
+    $ref: ./core/paths/policies@{policyId}@cancel.yaml
 
 ## AUTO
-/auto/test:
-    $ref: ./auto/paths/quotes.yaml
+/auto/makers:
+    $ref: ./auto/paths/makers.yaml
+/auto/makers/{makerId}/models:
+    $ref: ./auto/paths/makers@{makerId}@models.yaml
+/auto/quote:
+    $ref: ./auto/paths/quote.yaml
 
 

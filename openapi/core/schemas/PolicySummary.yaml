@@ -1,0 +1,53 @@
+type: object
+properties:
+  id:
+    type: number
+    description: Policy's identifier
+    example: 4321
+    readOnly: true
+  policyNumber:
+    type: string
+    description: Policy number
+    example: PLC-010101
+  policyHolderId:
+    type: number
+    description: Policy holder's User account identifier
+  policyType:
+    allOf:
+      - description: Policy type
+      - $ref: ../../shared/properties/OfferType.yaml
+  policyVersion:
+    type: integer
+    description: Policy's revision number
+  mainCoverage:
+    description: Primary cover value of the policy
+    type: number
+    minimum: 1.00
+    example: 2999999
+  appliedOn:
+    allOf:
+      - $ref: ../../shared/properties/Timestamp.yaml
+      - description: Policy's application date
+  validFrom:
+    allOf:
+      - $ref: ../../shared/properties/Timestamp.yaml
+      - description: Policy's validity start date and time
+  validUntil:
+    allOf:
+      - $ref: ../../shared/properties/Timestamp.yaml
+      - description: Policy's validity end date and time
+  status:
+    type: string
+    description: Policy status
+    enum:
+      - active
+      - expired
+      - cancellation-in-review
+      - cancelled
+      - refunded
+  cancelledAt:
+    allOf:
+      - $ref: ../../shared/properties/Timestamp.yaml
+      - description: Policy's cancellation request reason.
+        nullable: true
+

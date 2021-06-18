@@ -1,24 +1,23 @@
 get:
   tags:
-    - Users
-  summary: List All Users
-  x-internal: true
-  operationId: ListUsers
+    - Organizations
+  summary: List All Organizations
+  operationId: ListOrganizations
   parameters:
     - $ref: ../../shared/parameters/header/collectionLimit.yaml
     - $ref: ../../shared/parameters/header/collectionOffset.yaml
   description: |
-    List all users
+    List all accessible organizations
   responses:
     '200':
-      description: A list of users was retrieved successfully
+      description: A list of organizations was retrieved successfully
       content:
         application/json:
           schema:
             type: array
             items:
               allOf:
-                - $ref: ../schemas/User.yaml
+                - $ref: ../schemas/Organization.yaml
                 - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
                 - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
     '401':
@@ -27,39 +26,37 @@ get:
       $ref: ../../shared/responses/Unauthorized.yaml
 post:
   tags:
-    - Users
-  summary: Register a User
-  operationId: RegisterUser
+    - Organizations
+  summary: Create an Organization
+  operationId: CreateOrganization
   description: |
-    Register a User
+    Create an organization
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../schemas/User.yaml
+          $ref: ../schemas/Organization.yaml
     required: true
   responses:
     '204':
-      description: A user account was registered successfully
-    '422':
-      $ref: ../../shared/responses/ValidationErrorResponse.yaml
-
-delete:
-  tags:
-    - Users
-  summary: Batch Deactivate Users
-  x-internal: true
-  operationId: DeactivateUsers
-  description: |
-    Deactivate a list of users
-  parameters:
-    - $ref: ../../shared/parameters/query/ids.yaml
-  responses:
-    '204':
-      description: A list of user accounts was deactivated successfully
+      description: An organization account was created successfully
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
     '401':
       $ref: ../../shared/responses/Unauthenticated.yaml
     '403':
       $ref: ../../shared/responses/Unauthorized.yaml
+delete:
+  tags:
+    - Organizations
+  summary: Batch Remove Organizations
+  operationId: RemoveOrganizations
+  description: |
+    Remove a list of organizations
+  parameters:
+    - $ref: ../../shared/parameters/query/ids.yaml
+  responses:
+    '204':
+      description: A list of organizations was removed successfully
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml

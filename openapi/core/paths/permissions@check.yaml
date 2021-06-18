@@ -1,0 +1,44 @@
+post:
+  tags:
+    - Permissions
+  summary: Check Permission
+  operationId: CheckPermission
+  description: |
+    Check permission for an action
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - action
+            - resourceType
+          properties:
+            action:
+              type: string
+              description: Intended action
+              enum:
+                - list
+                - create
+                - read
+                - update
+                - delete
+            resourceType:
+              $ref: ../../shared/properties/ResourceType.yaml
+            resourceId:
+              allOf:
+                - $ref: ../../shared/properties/ResourceId.yaml
+                - description: |
+                    Resource ID.
+
+                    Required for `read`, `update` and `delete` actions.
+    required: true
+  responses:
+    '204':
+      description: Action is permitted
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

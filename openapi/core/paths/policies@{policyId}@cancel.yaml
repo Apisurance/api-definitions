@@ -1,0 +1,50 @@
+parameters:
+  - name: policyId
+    in: path
+    description: The Policy's identifier
+    required: true
+    schema:
+      type: integer
+      example: 4321
+
+put:
+  tags:
+    - Policies
+  summary: Cancel a Policy
+  operationId: CancelPolicy
+  description: |
+    Request policy cancellation
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            cancellationReason:
+              type: string
+              description: Reason to cancel
+              example: Flight cancelled
+            action:
+              type: string
+              description: |
+                Intended action after cancellation. Subject to carrier's review
+              nullable: true
+              enum:
+                - refund
+                - credits
+              example: null
+    required: true
+  responses:
+    '200':
+      description: Policy is now pending cancellation
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/PolicySummary.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

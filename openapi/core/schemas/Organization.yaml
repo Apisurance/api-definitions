@@ -1,0 +1,35 @@
+type: object
+required:
+  - legalName
+  - tradeName
+properties:
+  id:
+    type: number
+    description: Organization's identifier
+    example: 4321
+    readOnly: true
+  primaryRepresentativeId:
+    type: number
+    description: |
+      User identifier of the representative.
+
+      By default, value is set to the *User* that created or registered the organization.
+    example: 4321
+    readOnly: true
+  legalName:
+    type: string
+    description: Organization's legal name
+    example: Reconn Smart Solutions, Inc.
+  tradeName:
+    type: string
+    description: Organization's trade name
+    example: Reconn
+  billingAddress:
+    allOf:
+      - description: Organization's billing address
+      - $ref: ../../shared/properties/Address.yaml
+  contactAddress:
+    allOf:
+      - description: Organization's contact address
+      - $ref: ../../shared/properties/Address.yaml
+

@@ -1,8 +1,20 @@
 ## Core
 - name: Users
+  x-internal: true
   description: Users
+- name: Organizations
+  x-internal: true
+  description: Organizations
+- name: Permissions
+  description: Permissions
+- name: Carriers
+  description: Carriers
+- name: Policies
+  description: Policies
 
 ## Auto
-- name: Quotations
+- name: Vehicle Specs
   description: |
-    Create and manage quotations
+    List of Makers and Models
+- name: Auto Quotations
+  description: Quotations

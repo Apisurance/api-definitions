@@ -1,0 +1,47 @@
+type: object
+properties:
+  id:
+    type: number
+    description: Carrier's identifier
+    example: 4321
+    readOnly: true
+  primaryRepresentativeId:
+    type: number
+    description: |
+      User identifier of the representative.
+
+      By default, value is set to the *User* that created or registered the organization.
+    example: 4321
+    readOnly: true
+  legalName:
+    type: string
+    description: Carrier's legal name
+    example: Reconn Smart Solutions, Inc.
+  tradeName:
+    type: string
+    description: Carrier's trade name
+    example: Reconn
+  yearEstablished:
+    type: integer
+    description: Carrier's year of establishment
+    example: 1993
+  billingAddress:
+    allOf:
+      - description: Carrier's billing address
+      - $ref: ../../shared/properties/Address.yaml
+  contactAddress:
+    allOf:
+      - description: Carrier's contact address
+      - $ref: ../../shared/properties/Address.yaml
+  registrationNumber:
+    type: string
+    description: Carrier's insurance number issued by the Insurance Commission
+  websiteUrl:
+    type: string
+    description: Carrier's official website
+    format: url
+  offerTypes:
+    type: array
+    description: Carrier's available offer types
+    items:
+      $ref: ../../shared/properties/OfferType.yaml

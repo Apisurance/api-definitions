@@ -1,0 +1,7 @@
+type: object
+properties:
+  updatedAt:
+    description: Resource's last update timestamp
+    readOnly: true
+    allOf:
+      - $ref: ../properties/Timestamp.yaml

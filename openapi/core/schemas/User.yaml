@@ -1,59 +1,31 @@
-type: object
-required:
-  - firstName
-  - middleName
-  - lastName
-  - email
-properties:
-  id:
-    type: number
-    description: User identifier
-    example: 4321
-    readOnly: true
-  firstName:
-    type: string
-    description: User's first name
-    example: John
-  middleName:
-    type: string
-    description: User's middle name
-    example: Marshall
-  lastName:
-    type: string
-    description: User's last name
-    example: Doe
-  fullName:
-    type: string
-    description: |
-      User's full name.
-
-      _Use this property only as an alternative to providing the first name, middle name and last name individually._
-  email:
-    type: string
-    format: email
-    description: User's email address
-  contactNumber:
-    type: string
-    format: E.164
-    pattern: ^\+?[1-9]\d{1,14}$
-    description: User's contact number in ISO E.164 format.
-    example: +639191234567
-  password:
-    type: string
-    minimum: 8
-    description: User's password
-    writeOnly: true
-  passwordConfirmation:
-    type: string
-    minimum: 8
-    description: User's confirmation of the chosen password
-    writeOnly: true
-  leadProfileId:
-    type: number
-    description: Attached lead profile
-  billingAddress:
-    description: Billing address
-    $ref: ../../shared/properties/Address.yaml
-  contactAddress:
-    description: Contact address
-    $ref: ../../shared/properties/Address.yaml
+allOf:
+  - $ref: ../../shared/schemas/Person.yaml
+  - type: object
+    required:
+      - firstName
+      - middleName
+      - lastName
+      - email
+    properties:
+      id:
+        type: number
+        description: User's identifier
+        example: 4321
+        readOnly: true
+      password:
+        type: string
+        minimum: 8
+        description: User's password
+        writeOnly: true
+      passwordConfirmation:
+        type: string
+        minimum: 8
+        description: User's confirmation of the chosen password
+        writeOnly: true
+      leadProfileId:
+        type: number
+        description: Attached lead profile
+      addedBy:
+        type: number
+        description: User's identifier that added the User
+        example: 4321

@@ -1,0 +1,33 @@
+parameters:
+  - name: makerId
+    in: path
+    description: The Maker's identifier
+    required: true
+    schema:
+      type: integer
+      example: 4321
+
+get:
+  tags:
+    - Vehicle Specs
+  summary: List Models of a Maker
+  operationId: ListMakerModels
+  description: |
+    List all models of a maker
+  parameters:
+    - name: year
+      in: query
+      description: |
+        Filter models with a release year up to date
+      schema:
+        type: integer
+        example: 2015
+  responses:
+    '200':
+      description: A list of models was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: ../schemas/Model.yaml

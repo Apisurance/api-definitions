@@ -1,0 +1,9 @@
+allOf:
+  - $ref: ../../shared/schemas/Person.yaml
+  - type: object
+    properties:
+      id:
+        type: number
+        description: Lead's identifier
+        example: 4321
+        readOnly: true

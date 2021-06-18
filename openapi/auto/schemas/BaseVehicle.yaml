@@ -1,0 +1,45 @@
+type: object
+properties:
+  makerId:
+    type: number
+    description: Maker's identifier
+    example: 4321
+  modelId:
+    type: number
+    description: Model's identifier
+    example: 4321
+  yearModel:
+    type: number
+    description: Year model
+    example: 2016
+    format: YYYY
+  plateNumber:
+    type: string
+    description: Vehicle plate number
+    example: ABC 1234
+  color:
+    type: string
+    description: Vehicle color as listed in the Certificate of Registration
+    example: Metallic Orange
+  chassisNumber:
+    type: string
+    description: Vehicle chassis number as listed in the Certificate of Registration
+    example: NCR1234567788
+  engineNumber:
+    type: string
+    description: Vehicle engine number as listed in the Certificate of Registration
+    example: 2N123456777
+  registrationNumber:
+    type: string
+    description: Vehicle registration number as listed in the Certificate of Registration
+    example: MV-1123456778
+  mortgagedFrom:
+    type: string
+    description: Name of the lender/entity to which the vehicle is currently mortgaged from. (i.e. ank name)
+    example: Acme Bank Inc.
+  mortgagedUntil:
+    type: string
+    format: date
+    pattern: YYYY-MM-DD
+
+

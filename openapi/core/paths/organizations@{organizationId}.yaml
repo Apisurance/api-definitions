@@ -1,7 +1,7 @@
 parameters:
-  - name: userId
+  - name: organizationId
     in: path
-    description: The User's identifier
+    description: The Organization's identifier
     required: true
     schema:
       type: integer
@@ -9,44 +9,41 @@ parameters:
 
 get:
   tags:
-    - Users
-  summary: Retrieve a User
-  x-internal: true
-  operationId: GetUser
+    - Organizations
+  summary: Retrieve an Organization
+  operationId: GetOrganization
   description: |
-    Retrieve user account details
+    Retrieve an organization's details
   responses:
     '200':
-      description: A user account was retrieved successfully
+      description: An organization was retrieved successfully
       content:
         application/json:
           schema:
             allOf:
-              - $ref: ../schemas/User.yaml
+              - $ref: ../schemas/Organization.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
     '401':
       $ref: ../../shared/responses/Unauthenticated.yaml
     '403':
       $ref: ../../shared/responses/Unauthorized.yaml
-
 put:
   tags:
-    - Users
-  summary: Update a User
-  x-internal: true
-  operationId: UpdateUser
+    - Organizations
+  summary: Update an Organization
+  operationId: UpdateOrganization
   description: |
-    Update a user account
+    Update an organization
   requestBody:
     content:
       application/json:
         schema:
-          $ref: ../schemas/User.yaml
+          $ref: ../schemas/Organization.yaml
     required: true
   responses:
-    '200':
-      description: A user account was updated successfully
+    '204':
+      description: An organization account was updated successfully
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
     '401':
@@ -55,15 +52,16 @@ put:
       $ref: ../../shared/responses/Unauthorized.yaml
 delete:
   tags:
-    - Users
-  summary: Deactivate a User
-  x-internal: true
-  operationId: DeactivateUser
+    - Organizations
+  summary: Remove an Organization
+  operationId: RemoveOrganization
   description: |
-    Deactivate a user
+    Remove an organization
+  parameters:
+    - $ref: ../../shared/parameters/query/ids.yaml
   responses:
     '204':
-      description: A user account was deactivated successfully
+      description: An organization was removed successfully
     '401':
       $ref: ../../shared/responses/Unauthenticated.yaml
     '403':

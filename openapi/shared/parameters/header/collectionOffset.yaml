@@ -1,0 +1,7 @@
+in: header
+name: x-collection-offset
+schema:
+  type: integer
+  description: Collection query offset
+  example: 50
+
