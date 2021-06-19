@@ -1,10 +1,10 @@
 post:
   tags:
     - Auto Quotations
-  summary: Request a Quotation
-  operationId: RequestQuotation
+  summary: Get Quotations
+  operationId: GetQuotes
   description: |
-    Request a quotation
+    Request quotations
   requestBody:
     content:
       application/json:
@@ -13,9 +13,12 @@ post:
     description: Quote Request resource
     required: true
   responses:
-    '201':
+    '200':
       description: A quotation was generated successfully
       content:
         application/json:
           schema:
-            $ref: ../components/schemas/Quote.yaml
+            type: array
+            description: List of quotations
+            items:
+              $ref: ../schemas/Quote.yaml

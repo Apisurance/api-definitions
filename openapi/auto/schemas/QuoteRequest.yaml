@@ -2,6 +2,11 @@ type: object
 required:
   - vehicle
 properties:
+  id:
+    type: string
+    description: Quote Request identifier
+    example: e802883f-6d67-40bf-8c12-de450c481024
+    readOnly: true
   vehicle:
     allOf:
       - $ref: ./BaseVehicle.yaml
@@ -10,6 +15,20 @@ properties:
           - makerId
           - modelId
           - yearModel
+        properties:
+          isBrandNew:
+            description: Whether the vehicle is bought brand new and still in its first insurance policy .
+            type: boolean
+          hasExistingPolicy:
+            type: boolean
+            description: Whether the vehicle is currently insured.
+          existingPolicyExpirationDate:
+            allOf:
+              - $ref: ../../shared/schemas/Date.yaml
+              - description: End of validity of the existing policy of the vehicle
+          existingPolicyCarrier:
+            type: string
+            description: Existing policy's carrier name
   primaryCoverage:
     type: number
     description: |
@@ -20,7 +39,7 @@ properties:
     anyOf:
       - type: number
         description: |
-          Intended primary coverage amount.
+          Intended coverage value for damages caused by acts of nature.
         example: 1500000
       - type: boolean
         description: |
@@ -72,6 +91,9 @@ properties:
     type: number
     description: Agent Profile's identifier
     example: 4321
+  referrer:
+    type: string
+    description: Source of the lead
 
 
 

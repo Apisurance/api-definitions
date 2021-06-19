@@ -1,0 +1,35 @@
+type: object
+properties:
+  premium:
+    type: number
+    format: currency
+    description: Premium amount including fees
+    example: 9000.5
+  premiumExc:
+    type: number
+    format: currency
+    description: Premium amount excluding fees
+    example: 9000.5
+  totalFees:
+    type: number
+    format: currency
+    description: Total fees
+    example: 1000
+  totalDiscounts:
+    type: number
+    format: currency
+    description: Total discounts
+    example: 1000
+  fees:
+    type: array
+    description: List of fees
+    items:
+      $ref: ./Fee.yaml
+  discounts:
+    type: array
+    description: List of discounts
+    items:
+      $ref: ./Discount.yaml
+  currency:
+    type: string
+    description: Premium currency

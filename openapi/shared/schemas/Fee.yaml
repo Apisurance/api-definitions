@@ -1,0 +1,25 @@
+type: object
+properties:
+  amount:
+    type: number
+    format: currency
+    description: Amount
+    example: 1000
+  percentage:
+    type: number
+    format: fixed-point percentage
+    description: |
+      Amount percentage relative to the premium.
+
+      Represent 19.99% as 19.99.
+    example: 10.1
+  displayName:
+    type: string
+    description: Fee name
+    example: VAT
+  description:
+    type: string
+    description: Fee description
+    example: Value added tax imposed to goods and services
+  currency:
+    $ref: ./Currency.yaml

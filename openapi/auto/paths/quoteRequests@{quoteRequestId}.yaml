@@ -1,0 +1,23 @@
+parameters:
+  - name: quoteRequestId
+    in: path
+    description: The Quote Request identifier
+    required: true
+    schema:
+      type: string
+      example: e802883f-6d67-40bf-8c12-de450c481024
+
+get:
+  tags:
+    - Auto Quotations
+  summary: Retrieve a Quotation Request
+  operationId: RetrieveQuoteRequest
+  description: |
+    Retrieve a quotation request
+  responses:
+    '200':
+      description: A quotation request was retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/QuoteRequest.yaml

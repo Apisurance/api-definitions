@@ -1,10 +1,10 @@
 parameters:
-  - name: makerId
+  - name: maker
     in: path
     description: The Automaker's identifier
     required: true
     schema:
-      type: integer
+      type: string
       example: TOYOTA
 
 get:
@@ -18,7 +18,9 @@ get:
     - name: year
       in: query
       description: |
-        Filter models with a release year up to date
+        Filter models with a release year up to date.
+
+        If not provided, it defaults to the current year.
       schema:
         type: integer
         example: 2015

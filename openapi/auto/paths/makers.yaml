@@ -1,7 +1,7 @@
 get:
   tags:
     - Vehicle Specs
-  summary: List Auto Makers
+  summary: List Automakers
   operationId: ListMakers
   description: |
     List all vehicle automakers
@@ -12,6 +12,13 @@ get:
         application/json:
           schema:
             type: array
+            description: List of automakers
             items:
               type: string
-              example: TOYOTA
+              description: Automaker
+            example:
+              - TOYOTA
+              - FORD
+
+
+

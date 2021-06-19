@@ -13,6 +13,10 @@ properties:
     description: Year model
     example: 2016
     format: YYYY
+  seats:
+    type: number
+    description: Number of seats
+    example: 5
   plateNumber:
     type: string
     description: Vehicle plate number
@@ -33,7 +37,17 @@ properties:
     type: string
     description: Vehicle registration number as listed in the Certificate of Registration
     example: MV-1123456778
-  mortgagedFrom:
+  mvFileNumber:
+    type: string
+    description: Vehicle mv file number as listed in the Certificate of Registration
+    example: MV-1123456778
+  primaryUse:
+    type: string
+    description: Vehicle purpose or primary use
+    enum:
+      - private
+      - commercial
+  mortagee:
     type: string
     description: Name of the lender/entity to which the vehicle is currently mortgaged from. (i.e. ank name)
     example: Acme Bank Inc.
@@ -41,5 +55,6 @@ properties:
     type: string
     format: date
     pattern: YYYY-MM-DD
+    description: The end date of the mortgage term.
 
 

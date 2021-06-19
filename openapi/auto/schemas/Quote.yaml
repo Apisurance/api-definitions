@@ -1,0 +1,81 @@
+type: object
+properties:
+  id:
+    type: string
+    description: Quote identifier
+    example: f367d594-70c3-498c-a016-f745e85b987f
+  quotationRequestId:
+    type: string
+    description: |
+      Quote Request identifier. Reference to the original quote request parameter
+    example: e802883f-6d67-40bf-8c12-de450c481024
+  vehicle:
+    allOf:
+      - $ref: ./BaseVehicle.yaml
+      - description: Vehicle information
+        required:
+          - makerId
+          - modelId
+          - yearModel
+        properties:
+          isBrandNew:
+            description: Whether the vehicle is bought brand new and still in its first insurance policy .
+            type: boolean
+          hasExistingPolicy:
+            type: boolean
+            description: Whether the vehicle is currently insured.
+          existingPolicyExpirationDate:
+            allOf:
+              - $ref: ../../shared/schemas/Date.yaml
+              - description: End of validity of the existing policy of the vehicle
+          existingPolicyCarrier:
+            type: string
+            description: Existing policy's carrier name
+  primaryCoverage:
+    type: number
+    description: |
+      Primary coverage amount.
+  actsOfNatureCoverage:
+    type: number
+    nullable: true
+    description: |
+      Coverage value for damages caused by acts of nature
+    example: 1500000
+  tplBodilyInjuryCoverage:
+    type: number
+    nullable: true
+    description: |
+      Coverage value for damages causing third-party bodily injury.
+    example: 1500000
+  tplPropertyDamageCoverage:
+    type: number
+    nullable: true
+    description: |
+      Coverage value for damages to third-party properties.
+    example: 1500000
+  personalAccidentCoverage:
+    type: number
+    nullable: true
+    description: |
+      Coverage value for personal accident.
+    example: 1500000
+  withRoadsideAssistance:
+    type: boolean
+    description: Whether cover for roadside assistance is included.
+    default: false
+  withTowingService:
+    type: boolean
+    description: Whether cover for towing service is included.
+    default: false
+  premiumBreakdown:
+    allOf:
+      - $ref: ../../shared/schemas/Premium.yaml
+      - description: Premium amount breakdown
+  validUntil:
+    allOf:
+      - $ref: ../../shared/schemas/Date.yaml
+      - description: End of validity of the quote
+  carrierId:
+    type: number
+    description: Carrier's identifier
+    example: 4321

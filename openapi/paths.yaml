@@ -23,9 +23,13 @@
 ## AUTO
 /auto/makers:
     $ref: ./auto/paths/makers.yaml
-/auto/makers/{makerId}/models:
-    $ref: ./auto/paths/makers@{makerId}@models.yaml
-/auto/quote:
-    $ref: ./auto/paths/quote.yaml
+/auto/makers/{maker}/models:
+    $ref: ./auto/paths/makers@{maker}@models.yaml
+/auto/get-quotes:
+    $ref: ./auto/paths/getQuotes.yaml
+/auto/quotes/{quoteId}:
+    $ref: ./auto/paths/quotes@{quoteId}.yaml
+/auto/quote-requests/{quoteRequestId}:
+    $ref: ./auto/paths/quoteRequests@{quoteRequestId}.yaml
 
 

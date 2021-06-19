@@ -1,0 +1,29 @@
+type: object
+properties:
+  amount:
+    type: number
+    format: currency
+    description: Amount
+    example: 1000
+  percentage:
+    type: number
+    format: fixed-point percentage
+    description: |
+      Amount percentage relative to the premium.
+
+      Represent 19.99% as 19.99.
+    example: 10.1
+  displayName:
+    type: string
+    description: Discount name
+    example: Birthday Discount
+  description:
+    type: string
+    description: Discount description
+    example: Discount for purchasing on the date of owner's birthdate
+  currency:
+    $ref: ./Currency.yaml
+  promoCode:
+    type: string
+    description: Promo code
+    example: BIRTHDAY
