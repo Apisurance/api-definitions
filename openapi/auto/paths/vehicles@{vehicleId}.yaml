@@ -1,0 +1,75 @@
+parameters:
+  - name: vehicleId
+    in: path
+    description: The Vehicle's identifier
+    required: true
+    schema:
+      type: integer
+      example: 1111
+
+get:
+  tags:
+    - Auto Vehicles
+  summary: Retrieve a Vehicle
+  operationId: GetVehicle
+  description: |
+    Retrieve a managed vehicle
+  responses:
+    '200':
+      description: A vehicle was retrieved successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Vehicle.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
+
+put:
+  tags:
+    - Auto Vehicles
+  summary: Modify Vehicle Info
+  operationId: ModifyVehicle
+  description: |
+    Request modification of a vehicle's details
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/Vehicle.yaml
+    required: true
+  responses:
+    '200':
+      description: A vehicle modification request was recorded successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Vehicle.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
+
+delete:
+  tags:
+    - Auto Vehicles
+  summary: Delist a Vehicle
+  operationId: DelistVehicle
+  description: |
+    Delist a vehicle from the system
+  responses:
+    '204':
+      description: A vehicle delisting request was recorded successfully
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

@@ -23,7 +23,10 @@ get:
               - $ref: ../schemas/Application.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
-
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
 put:
   tags:
     - Auto Applications
@@ -52,7 +55,12 @@ put:
               - $ref: ../schemas/Application.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
-
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
 
 
 delete:
@@ -80,3 +88,9 @@ delete:
   responses:
     '204':
       description: An application was cancelled successfully
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

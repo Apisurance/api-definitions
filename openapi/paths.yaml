@@ -19,6 +19,10 @@
     $ref: ./core/paths/policies.yaml
 /policies/{policyId}/cancel:
     $ref: ./core/paths/policies@{policyId}@cancel.yaml
+/attachments:
+    $ref: ./core/paths/attachments.yaml
+/attachments/{attachmentId}:
+    $ref: ./core/paths/attachments@{attachmentId}.yaml
 
 ## AUTO
 /auto/makers:
@@ -35,4 +39,8 @@
     $ref: ./auto/paths/applications.yaml
 /auto/applications/{applicationId}:
     $ref: ./auto/paths/applications@{applicationId}.yaml
+/auto/vehicles:
+    $ref: ./auto/paths/vehicles.yaml
+/auto/vehicles/{vehicleId}:
+    $ref: ./auto/paths/vehicles@{vehicleId}.yaml
 

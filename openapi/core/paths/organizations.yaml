@@ -24,6 +24,7 @@ get:
       $ref: ../../shared/responses/Unauthenticated.yaml
     '403':
       $ref: ../../shared/responses/Unauthorized.yaml
+
 post:
   tags:
     - Organizations
@@ -38,14 +39,19 @@ post:
           $ref: ../schemas/Organization.yaml
     required: true
   responses:
-    '204':
+    '200':
       description: An organization account was created successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/Organization.yaml
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
     '401':
       $ref: ../../shared/responses/Unauthenticated.yaml
     '403':
       $ref: ../../shared/responses/Unauthorized.yaml
+
 delete:
   tags:
     - Organizations

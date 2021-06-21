@@ -9,7 +9,7 @@ properties:
     readOnly: true
   vehicle:
     allOf:
-      - $ref: ./BaseVehicle.yaml
+      - $ref: ./Vehicle.yaml
       - description: Vehicle information
         required:
           - makerId

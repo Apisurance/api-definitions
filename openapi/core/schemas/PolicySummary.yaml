@@ -49,5 +49,5 @@ properties:
     allOf:
       - $ref: ../../shared/schemas/Timestamp.yaml
       - description: Policy's cancellation request reason.
-        nullable: true
+        x-nullable: true
 

@@ -56,5 +56,35 @@ properties:
     format: date
     pattern: YYYY-MM-DD
     description: The end date of the mortgage term.
+  orAttachmentId:
+    type: number
+    description: |
+      Original Receipt attachment identifier.
+
+      Learn more about attachments [here](#tag/Attachments).
+    example: 1111
+  crAttachmentId:
+    type: number
+    description: |
+      Certificate of Registration attachment identifier.
+
+      Learn more about attachments [here](#tag/Attachments).
+    example: 1111
+  siAttachmentId:
+    type: number
+    description: |
+      Sales Invoice attachment identifier.
+
+      Learn more about attachments [here](#tag/Attachments).
+    example: 1111
+  status:
+    type: string
+    description: Vehicle's system record status
+    enum:
+      - active
+      - delisted
+      - pending-approval
+      - pending-modification-approval
+    readOnly: true
 
 

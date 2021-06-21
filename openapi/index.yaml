@@ -28,8 +28,10 @@ x-tagGroups:
       - Carriers
       - Policies
       - Permissions
+      - Attachments
   - name: Auto
     tags:
       - Auto Quotations
       - Auto Applications
+      - Auto Vehicles
       - Vehicle Specs

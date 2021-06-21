@@ -13,11 +13,12 @@ content:
           type: object
           additionalProperties:
             type: array
+            x-additionalPropertiesName: failing attribute key
             items:
               type: string
               description: Error messages for the specific field defined in the key
           example:
-            firstName:
+            propertyKey:
               - Must be at least 4 characters
               - Must not contain emojis
 

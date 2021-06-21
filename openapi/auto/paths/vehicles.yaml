@@ -1,0 +1,26 @@
+get:
+  tags:
+    - Auto Vehicles
+  summary: List All Vehicles
+  operationId: ListVehicles
+  parameters:
+    - $ref: ../../shared/parameters/header/collectionLimit.yaml
+    - $ref: ../../shared/parameters/header/collectionOffset.yaml
+  description: |
+    List all managed vehicles
+  responses:
+    '200':
+      description: A list of vehicles was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: ../schemas/Vehicle.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+                - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

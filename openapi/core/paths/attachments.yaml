@@ -1,0 +1,26 @@
+post:
+  tags:
+    - Attachments
+  summary: Upload an Attachment
+  operationId: UploadAttachment
+  description: |
+    Upload an attachment
+  requestBody:
+    content:
+      multipart/form-data:
+        schema:
+          $ref: ../schemas/Attachment.yaml
+    required: true
+  responses:
+    '200':
+      description: An attachment was uploaded successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/Attachment.yaml
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

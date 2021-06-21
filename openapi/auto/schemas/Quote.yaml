@@ -11,13 +11,18 @@ properties:
     example: e802883f-6d67-40bf-8c12-de450c481024
   vehicle:
     allOf:
-      - $ref: ./BaseVehicle.yaml
+      - $ref: ./Vehicle.yaml
       - description: Vehicle information
         required:
           - makerId
           - modelId
           - yearModel
         properties:
+          id:
+            type: string
+            description: Vehicle identifier
+            example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+            readOnly: true
           isBrandNew:
             description: Whether the vehicle is bought brand new and still in its first insurance policy .
             type: boolean
@@ -37,25 +42,25 @@ properties:
       Primary coverage amount.
   actsOfNatureCoverage:
     type: number
-    nullable: true
+    x-nullable: true
     description: |
       Coverage value for damages caused by acts of nature
     example: 1500000
   tplBodilyInjuryCoverage:
     type: number
-    nullable: true
+    x-nullable: true
     description: |
       Coverage value for damages causing third-party bodily injury.
     example: 1500000
   tplPropertyDamageCoverage:
     type: number
-    nullable: true
+    x-nullable: true
     description: |
       Coverage value for damages to third-party properties.
     example: 1500000
   personalAccidentCoverage:
     type: number
-    nullable: true
+    x-nullable: true
     description: |
       Coverage value for personal accident.
     example: 1500000

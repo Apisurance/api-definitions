@@ -1,0 +1,42 @@
+parameters:
+  - name: attachmentId
+    in: path
+    description: The Attachment's identifier
+    required: true
+    schema:
+      type: integer
+      example: 4321
+
+get:
+  tags:
+    - Attachments
+  summary: Retrieve an Attachment
+  operationId: GetAttachment
+  description: |
+    Retrieve an attachment
+  responses:
+    '200':
+      description: An attachment was retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/Attachment.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
+
+delete:
+  tags:
+    - Attachments
+  summary: Delete an Attachment
+  operationId: DeleteAttachment
+  description: |
+    Delete an attachment
+  responses:
+    '204':
+      description: An attachment was deleted successfully
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

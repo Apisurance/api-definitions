@@ -1,0 +1,38 @@
+type: object
+required:
+  - file
+properties:
+  id:
+    type: number
+    description: Attachment identifier
+    example: 1111
+    readOnly: true
+  file:
+    type: string
+    format: binary
+    description: File to be uploaded
+    writeOnly: true
+  mimeType:
+    type: string
+    format: mime-type
+    description: |
+      File MIME type.
+
+      If left empty, the platform will do a best guess of the MIME type.
+    example: image/png
+  url:
+    type: string
+    format: url
+    description: URL to where the file can be downloaded
+    readOnly: true
+  urlTtl:
+    type: number
+    format: minutes
+    x-nullable: true
+    readOnly: true
+    description: |
+      URL time-to-live in minutes.
+
+      Empty or `null` value means the URL is non-expiring.
+
+

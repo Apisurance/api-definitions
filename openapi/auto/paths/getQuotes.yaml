@@ -24,3 +24,5 @@ post:
               allOf:
                 - $ref: ../schemas/Quote.yaml
                 - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml

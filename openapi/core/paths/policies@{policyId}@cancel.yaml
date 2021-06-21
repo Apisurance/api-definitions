@@ -28,7 +28,7 @@ put:
               type: string
               description: |
                 Intended action after cancellation. Subject to carrier's review
-              nullable: true
+              x-nullable: true
               enum:
                 - refund
                 - credits

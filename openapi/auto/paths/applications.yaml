@@ -22,7 +22,12 @@ post:
               - $ref: ../schemas/Application.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
-
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml
 get:
   tags:
     - Auto Applications
@@ -43,3 +48,7 @@ get:
                 - $ref: ../schemas/Application.yaml
                 - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
                 - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '401':
+      $ref: ../../shared/responses/Unauthenticated.yaml
+    '403':
+      $ref: ../../shared/responses/Unauthorized.yaml

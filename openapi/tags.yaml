@@ -11,6 +11,8 @@
   description: Carriers
 - name: Policies
   description: Policies
+- name: Attachments
+  description: Attachments
 
 ## Auto
 - name: Vehicle Specs
@@ -22,3 +24,6 @@
 - name: Auto Applications
   x-displayName: Applications
   description: Applications
+- name: Auto Vehicles
+  x-displayName: Vehicles
+  description: Vehicles
