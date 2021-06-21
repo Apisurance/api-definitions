@@ -2,7 +2,7 @@ post:
   tags:
     - Auto Quotations
   summary: Get Quotations
-  operationId: GetQuotes
+  operationId: AutoGetQuotes
   description: |
     Request quotations
   requestBody:
@@ -21,4 +21,6 @@ post:
             type: array
             description: List of quotations
             items:
-              $ref: ../schemas/Quote.yaml
+              allOf:
+                - $ref: ../schemas/Quote.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml

@@ -28,11 +28,11 @@ properties:
   billingAddress:
     allOf:
       - description: Carrier's billing address
-      - $ref: ../../shared/properties/Address.yaml
+      - $ref: ../../shared/schemas/Address.yaml
   contactAddress:
     allOf:
       - description: Carrier's contact address
-      - $ref: ../../shared/properties/Address.yaml
+      - $ref: ../../shared/schemas/Address.yaml
   registrationNumber:
     type: string
     description: Carrier's insurance number issued by the Insurance Commission
@@ -44,4 +44,4 @@ properties:
     type: array
     description: Carrier's available offer types
     items:
-      $ref: ../../shared/properties/OfferType.yaml
+      $ref: ../../shared/schemas/OfferType.yaml

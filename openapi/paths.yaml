@@ -31,5 +31,8 @@
     $ref: ./auto/paths/quotes@{quoteId}.yaml
 /auto/quote-requests/{quoteRequestId}:
     $ref: ./auto/paths/quoteRequests@{quoteRequestId}.yaml
-
+/auto/applications:
+    $ref: ./auto/paths/applications.yaml
+/auto/applications/{applicationId}:
+    $ref: ./auto/paths/applications@{applicationId}.yaml
 

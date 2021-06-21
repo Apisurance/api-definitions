@@ -1,0 +1,82 @@
+parameters:
+  - name: applicationId
+    in: path
+    description: The Application's identifier
+    required: true
+    schema:
+      type: string
+      example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+get:
+  tags:
+    - Auto Applications
+  summary: Retrieve an Application
+  operationId: AutoGetApplication
+  description: |
+    Retreive a specific application.
+  responses:
+    '200':
+      description: An application was retrieved successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Application.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+
+put:
+  tags:
+    - Auto Applications
+  summary: Modify an Application
+  operationId: AutoUpdateApplication
+  description: |
+    Modify an application.
+
+    **Note:**
+    * If the status is `issued` and beyond, this action is prohibited. Modification requests must be done to the policy
+    * If the status of the application is other than `pending-approval`, this action will cause the application to return to `pending-approval`
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/Application.yaml
+    description: Application resource
+    required: true
+  responses:
+    '200':
+      description: An application modification request was submitted successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Application.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+
+
+
+delete:
+  tags:
+    - Auto Applications
+  summary: Cancel an Application
+  operationId: AutoCancelApplication
+  description: |
+    Cancel an application.
+
+    **Note:**
+    * If the status is `issued` and beyond, this action is prohibited. Cancellation requests must be done to the policy
+  requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              requestRefund:
+                type: boolean
+                description: |
+                  Whether to request for a refund upon cancellation of application.
+
+                  *Note that this requires approval by the carrier/insurer*
+  responses:
+    '204':
+      description: An application was cancelled successfully

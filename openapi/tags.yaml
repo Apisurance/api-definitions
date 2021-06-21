@@ -17,4 +17,8 @@
   description: |
     List of Makers and Models
 - name: Auto Quotations
+  x-displayName: Quotations
   description: Quotations
+- name: Auto Applications
+  x-displayName: Applications
+  description: Applications

@@ -1,0 +1,45 @@
+post:
+  tags:
+    - Auto Applications
+  summary: Apply
+  operationId: AutoApply
+  description: |
+    Apply for cover
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/Application.yaml
+    description: Application resource
+    required: true
+  responses:
+    '200':
+      description: An application was submitted successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Application.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+
+get:
+  tags:
+    - Auto Applications
+  summary: List All Applications
+  operationId: AutoListApplications
+  description: |
+    Retreive a list of all applications
+  responses:
+    '200':
+      description: A list of applications was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            description: List of applications
+            items:
+              allOf:
+                - $ref: ../schemas/Application.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+                - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml

@@ -27,9 +27,9 @@ properties:
   billingAddress:
     allOf:
       - description: Organization's billing address
-      - $ref: ../../shared/properties/Address.yaml
+      - $ref: ../../shared/schemas/Address.yaml
   contactAddress:
     allOf:
       - description: Organization's contact address
-      - $ref: ../../shared/properties/Address.yaml
+      - $ref: ../../shared/schemas/Address.yaml
 

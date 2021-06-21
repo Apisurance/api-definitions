@@ -24,10 +24,10 @@ post:
                 - update
                 - delete
             resourceType:
-              $ref: ../../shared/properties/ResourceType.yaml
+              $ref: ../../shared/schemas/ResourceType.yaml
             resourceId:
               allOf:
-                - $ref: ../../shared/properties/ResourceId.yaml
+                - $ref: ../../shared/schemas/ResourceId.yaml
                 - description: |
                     Resource ID.
 

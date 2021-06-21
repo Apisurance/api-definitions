@@ -94,6 +94,15 @@ properties:
   referrer:
     type: string
     description: Source of the lead
+  paymentTerm:
+    type: string
+    description: Preferred Payment Term
+    enum:
+      - annual
+      - semi-annual
+      - quarterly
+      - monthly
+
 
 
 

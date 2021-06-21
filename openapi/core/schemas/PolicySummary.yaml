@@ -15,7 +15,7 @@ properties:
   policyType:
     allOf:
       - description: Policy type
-      - $ref: ../../shared/properties/OfferType.yaml
+      - $ref: ../../shared/schemas/OfferType.yaml
   policyVersion:
     type: integer
     description: Policy's revision number
@@ -26,15 +26,15 @@ properties:
     example: 2999999
   appliedOn:
     allOf:
-      - $ref: ../../shared/properties/Timestamp.yaml
+      - $ref: ../../shared/schemas/Timestamp.yaml
       - description: Policy's application date
   validFrom:
     allOf:
-      - $ref: ../../shared/properties/Timestamp.yaml
+      - $ref: ../../shared/schemas/Timestamp.yaml
       - description: Policy's validity start date and time
   validUntil:
     allOf:
-      - $ref: ../../shared/properties/Timestamp.yaml
+      - $ref: ../../shared/schemas/Timestamp.yaml
       - description: Policy's validity end date and time
   status:
     type: string
@@ -47,7 +47,7 @@ properties:
       - refunded
   cancelledAt:
     allOf:
-      - $ref: ../../shared/properties/Timestamp.yaml
+      - $ref: ../../shared/schemas/Timestamp.yaml
       - description: Policy's cancellation request reason.
         nullable: true
 

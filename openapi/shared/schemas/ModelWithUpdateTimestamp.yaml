@@ -4,4 +4,4 @@ properties:
     description: Resource's last update timestamp
     readOnly: true
     allOf:
-      - $ref: ../properties/Timestamp.yaml
+      - $ref: ../schemas/Timestamp.yaml

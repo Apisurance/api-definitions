@@ -1,0 +1,66 @@
+type: object
+required:
+  - quoteId
+  - policyHolderType
+  - policyHolderId
+  - paymentMethod
+properties:
+  id:
+    type: string
+    description: Application identifier
+    example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+    readOnly: true
+  quoteId:
+    type: string
+    description: Quote identifier
+    example: f367d594-70c3-498c-a016-f745e85b987f
+  policyHolderType:
+    type: string
+    description: Policy Holder type.
+    enum:
+      - person
+      - company
+  policyHolderId:
+    type: number
+    description: The person's (User) or company's (Organization) identifier
+    example: 4321
+  appliedOn:
+    allOf:
+      - $ref: ../../shared/schemas/Timestamp.yaml
+      - description: Application date and time
+        readOnly: true
+  status:
+    type: string
+    description: Application status
+    enum:
+      - pending-approval
+      - pending-payment
+      - pending-issuance
+      - issued
+      - active
+      - expired
+      - refunded
+      - voided
+      - pending-refund-approval
+      - pending-refund
+    readOnly: true
+  paymentMethod:
+    type: string
+    description: Intended payment method
+    enum:
+      - cash
+      - check
+      - gcash
+      - paymaya
+      - bank-transfer
+      - integrated
+  paymentUrl:
+    type: string
+    format: url
+    nullable: true
+    description: |
+      Payment URL.
+
+      If the application is still pending approval, value is set to empty or `null`.
+    readOnly: true
+

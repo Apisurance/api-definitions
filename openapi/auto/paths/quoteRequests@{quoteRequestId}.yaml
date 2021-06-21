@@ -11,7 +11,7 @@ get:
   tags:
     - Auto Quotations
   summary: Retrieve a Quotation Request
-  operationId: RetrieveQuoteRequest
+  operationId: AutoRetrieveQuoteRequest
   description: |
     Retrieve a quotation request
   responses:
@@ -20,4 +20,6 @@ get:
       content:
         application/json:
           schema:
-            $ref: ../schemas/QuoteRequest.yaml
+            allOf:
+              - $ref: ../schemas/QuoteRequest.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml

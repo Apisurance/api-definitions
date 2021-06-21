@@ -71,6 +71,11 @@ properties:
     allOf:
       - $ref: ../../shared/schemas/Premium.yaml
       - description: Premium amount breakdown
+  deductibles:
+    type: array
+    description: List of deductibles (a.k.a. participation fees)
+    items:
+      $ref: ../../shared/schemas/Fee.yaml
   validUntil:
     allOf:
       - $ref: ../../shared/schemas/Date.yaml
@@ -79,3 +84,11 @@ properties:
     type: number
     description: Carrier's identifier
     example: 4321
+  paymentTerm:
+    type: string
+    description: Preferred Payment Term
+    enum:
+      - annual
+      - semi-annual
+      - quarterly
+      - monthly

@@ -17,13 +17,13 @@ get:
                     List of offer types.
 
                     Example: `&f:offerTypes[]=life-insurance&f:offerTypes[]=auto-insurance`
-                - $ref: ../../shared/properties/OfferType.yaml
+                - $ref: ../../shared/schemas/OfferType.yaml
           - allOf:
               - description: |
                   List of offer types in CSV format.
 
                   Example: `&f:offerTypes=life-insurance,auto-insurance`
-              - $ref: ../../shared/properties/OfferType.yaml
+              - $ref: ../../shared/schemas/OfferType.yaml
   description: |
     List all active carriers
   responses:
