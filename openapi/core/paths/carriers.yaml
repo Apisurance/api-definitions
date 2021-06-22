@@ -36,7 +36,3 @@ get:
             items:
               allOf:
                 - $ref: ../schemas/Carrier.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml

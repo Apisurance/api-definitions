@@ -1,5 +1,10 @@
 type: object
 properties:
+  id:
+    type: string
+    description: Vehicle identifier
+    example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+    readOnly: true
   makerId:
     type: number
     description: Maker's identifier

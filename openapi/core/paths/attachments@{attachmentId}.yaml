@@ -21,10 +21,6 @@ get:
         application/json:
           schema:
             $ref: ../schemas/Attachment.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
 
 delete:
   tags:
@@ -36,7 +32,3 @@ delete:
   responses:
     '204':
       description: An attachment was deleted successfully
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml

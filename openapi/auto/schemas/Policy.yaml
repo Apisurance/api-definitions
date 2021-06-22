@@ -1,0 +1,13 @@
+allOf:
+  - $ref: ../../core/schemas/Policy.yaml
+  - properties:
+      applicationdId:
+        type: string
+        description: Application identifier
+        example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+        readOnly: true
+      vehicleId:
+        type: string
+        description: Insured vehicle's identifier
+        example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+        readOnly: true

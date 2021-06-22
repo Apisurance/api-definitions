@@ -1,0 +1,27 @@
+parameters:
+  - name: policyId
+    in: path
+    description: The Policy identifier
+    required: true
+    schema:
+      type: number
+      example: 4321
+
+get:
+  tags:
+    - Auto Policies
+  summary: Print a Policy
+  operationId: PrintPolicy
+  description: |
+    Print a managed policy by providing a download link or redirect to the link
+  responses:
+    '200':
+      description: Download URL has been generated successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../core/schemas/Attachment.yaml
+    '301':
+      description: Redirects to a downloadable pdf copy
+
+

@@ -1,0 +1,21 @@
+type: object
+properties:
+  id:
+    type: number
+    description: Product's identifier
+    example: 4321
+    readOnly: true
+  carrierId:
+    type: number
+    description: Carrier's identifier
+    example: 4321
+    readOnly: true
+  type:
+    allOf:
+      - description: Product type
+        readOnly: true
+      - $ref: ../../shared/schemas/OfferType.yaml
+  name:
+    type: string
+    description: Product name
+    readOnly: true

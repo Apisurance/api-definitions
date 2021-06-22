@@ -4,8 +4,8 @@ parameters:
     description: The Vehicle's identifier
     required: true
     schema:
-      type: integer
-      example: 1111
+      type: string
+      example: 1a777b89-cbc1-47bf-8618-f071f18e8931
 
 get:
   tags:
@@ -24,10 +24,6 @@ get:
               - $ref: ../schemas/Vehicle.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
 
 put:
   tags:
@@ -54,10 +50,6 @@ put:
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
 
 delete:
   tags:
@@ -69,7 +61,3 @@ delete:
   responses:
     '204':
       description: A vehicle delisting request was recorded successfully
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml

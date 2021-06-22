@@ -1,0 +1,8 @@
+allOf:
+  - $ref: ./PolicySummary.yaml
+  - properties:
+      attachments:
+        type: array
+        description: List of file attachments (i.e. Policy Certificate, Terms & Conditions, etc.)
+        items:
+          $ref: ./Attachment.yaml

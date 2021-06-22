@@ -1,0 +1,25 @@
+parameters:
+  - name: policyId
+    in: path
+    description: The Policy identifier
+    required: true
+    schema:
+      type: number
+      example: 4321
+
+get:
+  tags:
+    - Auto Policies
+  summary: Retrieve a Policy
+  operationId: GetPolicy
+  description: |
+    Retrieve a managed policy
+  responses:
+    '200':
+      description: A policy was retrieved successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../schemas/Policy.yaml
+
+

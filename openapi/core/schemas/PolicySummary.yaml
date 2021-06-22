@@ -12,10 +12,6 @@ properties:
   policyHolderId:
     type: number
     description: Policy holder's User account identifier
-  policyType:
-    allOf:
-      - description: Policy type
-      - $ref: ../../shared/schemas/OfferType.yaml
   policyVersion:
     type: integer
     description: Policy's revision number
@@ -28,6 +24,10 @@ properties:
     allOf:
       - $ref: ../../shared/schemas/Timestamp.yaml
       - description: Policy's application date
+  issuedOn:
+    allOf:
+      - $ref: ../../shared/schemas/Timestamp.yaml
+      - description: Policy's issuance date
   validFrom:
     allOf:
       - $ref: ../../shared/schemas/Timestamp.yaml
@@ -48,6 +48,22 @@ properties:
   cancelledAt:
     allOf:
       - $ref: ../../shared/schemas/Timestamp.yaml
-      - description: Policy's cancellation request reason.
-        x-nullable: true
-
+      - description: Policy's cancellation request date and time.
+        type: [string,null]
+        readOnly: true
+        example: null
+  cancellationReason:
+    type: [string,null]
+    description: Policie's cancellation reason
+    readOnly: true
+    example: null
+  cancellationAction:
+    type: [string,null]
+    description: Policie's cancellation reason
+    readOnly: true
+    enum:
+      - credits
+      - refund
+    example: null
+  product:
+    $ref: ./ProductSummary.yaml

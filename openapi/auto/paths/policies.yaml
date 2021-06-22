@@ -1,0 +1,19 @@
+get:
+  tags:
+    - Auto Policies
+  summary: List All Policies
+  operationId: ListPolicies
+  description: |
+    List all managed vehicle policies
+  responses:
+    '200':
+      description: A list of vehicle policies was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            description: List of vehicle policies
+            items:
+              $ref: ../schemas/Policy.yaml
+
+

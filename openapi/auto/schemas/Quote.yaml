@@ -18,11 +18,6 @@ properties:
           - modelId
           - yearModel
         properties:
-          id:
-            type: string
-            description: Vehicle identifier
-            example: 1a777b89-cbc1-47bf-8618-f071f18e8931
-            readOnly: true
           isBrandNew:
             description: Whether the vehicle is bought brand new and still in its first insurance policy .
             type: boolean

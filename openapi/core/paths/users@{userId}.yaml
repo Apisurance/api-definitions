@@ -25,10 +25,6 @@ get:
               - $ref: ../schemas/User.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
 
 put:
   tags:
@@ -49,10 +45,6 @@ put:
       description: A user account was updated successfully
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
 delete:
   tags:
     - Users
@@ -64,7 +56,3 @@ delete:
   responses:
     '204':
       description: A user account was deactivated successfully
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml

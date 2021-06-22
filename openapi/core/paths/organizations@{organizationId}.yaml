@@ -24,10 +24,6 @@ get:
               - $ref: ../schemas/Organization.yaml
               - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
               - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
 put:
   tags:
     - Organizations
@@ -46,10 +42,7 @@ put:
       description: An organization account was updated successfully
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml
+
 delete:
   tags:
     - Organizations
@@ -62,7 +55,3 @@ delete:
   responses:
     '204':
       description: An organization was removed successfully
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml

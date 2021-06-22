@@ -19,14 +19,27 @@ properties:
       File MIME type.
 
       If left empty, the platform will do a best guess of the MIME type.
-    example: image/png
+    example: application/pdf
+  type:
+    type: string
+    x-nullable: true
+    description: |
+      File significance notation or marker
+    enum:
+      - policy-certificate
+      - terms-and-condition
+      - billing-statement
+      - invoice
+      - brochure
+      - agreement
+      - certificate
   url:
     type: string
     format: url
     description: URL to where the file can be downloaded
     readOnly: true
   urlTtl:
-    type: number
+    type: [number, null]
     format: minutes
     x-nullable: true
     readOnly: true
@@ -34,5 +47,5 @@ properties:
       URL time-to-live in minutes.
 
       Empty or `null` value means the URL is non-expiring.
-
+    example: null
 

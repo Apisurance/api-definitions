@@ -55,7 +55,7 @@ properties:
       - bank-transfer
       - integrated
   paymentUrl:
-    type: string
+    type: [string,null]
     format: url
     x-nullable: true
     description: |

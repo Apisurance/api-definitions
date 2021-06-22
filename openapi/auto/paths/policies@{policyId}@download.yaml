@@ -1,0 +1,26 @@
+parameters:
+  - name: policyId
+    in: path
+    description: The Policy identifier
+    required: true
+    schema:
+      type: number
+      example: 4321
+
+get:
+  tags:
+    - Auto Policies
+  summary: Download Policy Files
+  operationId: DownloadPolicy
+  description: |
+    Download all relevant attachment/files to the policy
+  responses:
+    '200':
+      description: Download attachments as a zip file
+      content:
+        application/zip:
+          schema:
+            type: string
+            description: Zip file containing all relevant attachments/files
+            format: binary
+

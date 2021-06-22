@@ -43,4 +43,14 @@
     $ref: ./auto/paths/vehicles.yaml
 /auto/vehicles/{vehicleId}:
     $ref: ./auto/paths/vehicles@{vehicleId}.yaml
+/auto/policies:
+    $ref: ./auto/paths/policies.yaml
+/auto/policies/{policyId}:
+    $ref: ./auto/paths/policies@{policyId}.yaml
+/auto/policies/{policyId}/print:
+    $ref: ./auto/paths/policies@{policyId}@print.yaml
+/auto/policies/{policyId}/download:
+    $ref: ./auto/paths/policies@{policyId}@download.yaml
+/auto/policies/{policyId}/send:
+    $ref: ./auto/paths/policies@{policyId}@send.yaml
 

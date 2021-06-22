@@ -27,3 +27,6 @@
 - name: Auto Vehicles
   x-displayName: Vehicles
   description: Vehicles
+- name: Auto Policies
+  x-displayName: Policies
+  description: Policies

@@ -20,7 +20,3 @@ post:
             $ref: ../schemas/Attachment.yaml
     '422':
       $ref: ../../shared/responses/ValidationErrorResponse.yaml
-    '401':
-      $ref: ../../shared/responses/Unauthenticated.yaml
-    '403':
-      $ref: ../../shared/responses/Unauthorized.yaml

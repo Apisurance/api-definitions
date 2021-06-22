@@ -1,0 +1,48 @@
+parameters:
+  - name: policyId
+    in: path
+    description: The Policy identifier
+    required: true
+    schema:
+      type: number
+      example: 4321
+
+post:
+  tags:
+    - Auto Policies
+  summary: Send a Copy of the Policy
+  operationId: SendPolicy
+  description: |
+    Send a copy of the policy
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: array
+          description: List of recipients
+          minItems: 1
+          maxItems: 5
+          items:
+            type: object
+            required:
+              - email
+            properties:
+              name:
+                type: [string, null]
+                description: Recipient's name
+                x-nullable: true
+                minimum: 1
+                example: John Doe
+              email:
+                type: string
+                description: Recipient's email address
+                example: john.doe@example.com
+    description: |
+      List of recipients. *Minimum of 1 recipient and maximum of 5 recipients.*
+    required: true
+  responses:
+    '204':
+      description: Request to send via email has beed recorded successfully
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+
