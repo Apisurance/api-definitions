@@ -9,9 +9,9 @@ parameters:
 
 get:
   tags:
-    - Auto Policies
+    - Life Policies
   summary: Print a Policy
-  operationId: AutoPrintPolicy
+  operationId: LifePrintPolicy
   description: |
     Print a managed policy by providing a download link or redirect to the link
   responses:

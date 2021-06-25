@@ -9,9 +9,9 @@ parameters:
 
 get:
   tags:
-    - Auto Policies
+    - Life Policies
   summary: Retrieve a Policy
-  operationId: AutoGetPolicy
+  operationId: LifeGetPolicy
   description: |
     Retrieve a managed policy
   responses:

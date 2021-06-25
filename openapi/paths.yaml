@@ -54,3 +54,30 @@
 /auto/policies/{policyId}/send:
     $ref: ./auto/paths/policies@{policyId}@send.yaml
 
+
+## Life
+/life/get-quotes:
+    $ref: ./life/paths/getQuotes.yaml
+/life/quotes/{quoteId}:
+    $ref: ./life/paths/quotes@{quoteId}.yaml
+/life/quote-requests/{quoteRequestId}:
+    $ref: ./life/paths/quoteRequests@{quoteRequestId}.yaml
+/life/applications:
+    $ref: ./life/paths/applications.yaml
+/life/applications/{applicationId}:
+    $ref: ./life/paths/applications@{applicationId}.yaml
+/life/insureds:
+    $ref: ./life/paths/insureds.yaml
+/life/insureds/{insuredId}:
+    $ref: ./life/paths/insureds@{insuredId}.yaml
+/life/policies:
+    $ref: ./life/paths/policies.yaml
+/life/policies/{policyId}:
+    $ref: ./life/paths/policies@{policyId}.yaml
+/life/policies/{policyId}/print:
+    $ref: ./life/paths/policies@{policyId}@print.yaml
+/life/policies/{policyId}/download:
+    $ref: ./life/paths/policies@{policyId}@download.yaml
+/life/policies/{policyId}/send:
+    $ref: ./life/paths/policies@{policyId}@send.yaml
+

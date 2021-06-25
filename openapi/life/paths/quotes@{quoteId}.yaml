@@ -1,0 +1,25 @@
+parameters:
+  - name: quoteId
+    in: path
+    description: The Quote identifier
+    required: true
+    schema:
+      type: string
+      example: f367d594-70c3-498c-a016-f745e85b987f
+
+get:
+  tags:
+    - Life Quotations
+  summary: Retrieve a Quotation
+  operationId: LifeRetrieveQuote
+  description: |
+    Retrieve a quotation
+  responses:
+    '200':
+      description: A quote was retrieved successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Quote.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml

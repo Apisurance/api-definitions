@@ -9,9 +9,9 @@ parameters:
 
 get:
   tags:
-    - Auto Policies
+    - Life Policies
   summary: Download Policy Files
-  operationId: AutoDownloadPolicy
+  operationId: LifeDownloadPolicy
   description: |
     Download all relevant attachment/files to the policy
   responses:

@@ -30,3 +30,20 @@
 - name: Auto Policies
   x-displayName: Policies
   description: Policies
+
+## Life
+- name: Vehicle Specs
+  description: |
+    List of Makers and Models
+- name: Life Quotations
+  x-displayName: Quotations
+  description: Quotations
+- name: Life Applications
+  x-displayName: Applications
+  description: Applications
+- name: Life Insureds
+  x-displayName: Insureds
+  description: Insureds
+- name: Life Policies
+  x-displayName: Policies
+  description: Policies

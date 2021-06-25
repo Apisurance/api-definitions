@@ -1,0 +1,18 @@
+allOf:
+  - $ref: ../../shared/schemas/Person.yaml
+  - type: object
+    required:
+      - firstName
+      - middleName
+      - lastName
+      - email
+    properties:
+      id:
+        type: string
+        description: Insured's identifier
+        example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+        readOnly: true
+      smoker:
+        type: boolean
+        description: Whether the insured is a smoker or not
+        x-nullable: true

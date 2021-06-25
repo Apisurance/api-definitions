@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Life Insured
+  summary: List All Insured
+  operationId: ListInsured
+  parameters:
+    - $ref: ../../shared/parameters/header/collectionLimit.yaml
+    - $ref: ../../shared/parameters/header/collectionOffset.yaml
+  description: |
+    List all managed insureds
+  responses:
+    '200':
+      description: A list of insureds was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              allOf:
+                - $ref: ../schemas/Insured.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+                - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml

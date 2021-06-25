@@ -1,18 +1,18 @@
 get:
   tags:
-    - Auto Policies
+    - Life Policies
   summary: List All Policies
-  operationId: AutoListPolicies
+  operationId: LifeListPolicies
   description: |
-    List all managed vehicle policies
+    List all managed life policies
   responses:
     '200':
-      description: A list of vehicle policies was retrieved successfully
+      description: A list of life policies was retrieved successfully
       content:
         application/json:
           schema:
             type: array
-            description: List of vehicle policies
+            description: List of life policies
             items:
               $ref: ../schemas/Policy.yaml
 

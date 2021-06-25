@@ -2,37 +2,40 @@ type: object
 properties:
   firstName:
     type: string
-    description: User's first name
+    description: Person's first name
     example: John
   middleName:
     type: string
-    description: User's middle name
+    description: Person's middle name
     example: Marshall
   lastName:
     type: string
-    description: User's last name
+    description: Person's last name
     example: Doe
   fullName:
     type: string
     description: |
-      User's full name.
+      Person's full name.
 
       _Use this property only as an alternative to providing the first name, middle name and last name individually._
   email:
     type: string
     format: email
-    description: User's email address
+    description: Person's email address
   contactNumber:
     type: string
     format: E.164
     pattern: ^\+?[1-9]\d{1,14}$
-    description: User's contact number in ISO E.164 format.
+    description: Person's contact number in ISO E.164 format.
     example: +639191234567
-  billingAddress:
+  birthDate:
     allOf:
-      - description: User's billing address
-      - $ref: ../../shared/schemas/Address.yaml
-  contactAddress:
-    allOf:
-      - description: User's contact address
-      - $ref: ../../shared/schemas/Address.yaml
+      - $ref: ./Date.yaml
+      - description: Person's birthdate
+        example: "1993-11-18"
+  sex:
+    type: string
+    description: Person's physical attributes
+    enum:
+      - male
+      - female

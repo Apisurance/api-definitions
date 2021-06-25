@@ -29,3 +29,11 @@ allOf:
         type: number
         description: User's identifier that added the User
         example: 4321
+      billingAddress:
+        allOf:
+          - description: Person's billing address
+          - $ref: ../../shared/schemas/Address.yaml
+      contactAddress:
+        allOf:
+          - description: Person's contact address
+          - $ref: ../../shared/schemas/Address.yaml

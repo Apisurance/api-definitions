@@ -1,0 +1,78 @@
+type: object
+required:
+  - insured
+properties:
+  id:
+    type: string
+    description: Quote Request identifier
+    example: e802883f-6d67-40bf-8c12-de450c481024
+    readOnly: true
+  insured:
+    allOf:
+      - $ref: ./Insured.yaml
+      - description: Insured's information
+        required:
+          - makerId
+          - modelId
+          - yearModel
+        properties:
+          hasExistingPolicy:
+            type: boolean
+            description: Whether the insured is currently insured.
+          existingPolicyExpirationDate:
+            allOf:
+              - $ref: ../../shared/schemas/Date.yaml
+              - description: End of validity of the existing policy of the insured
+          existingPolicyCarrier:
+            type: string
+            description: Existing policy's carrier name
+  accidentalDeathBenefit:
+    example: 1000000
+    type: number
+    description: |
+      Intended primary death benefit amount.
+
+      Leave empty to quote based on the insured's profile'.
+  disablementBenefit:
+    anyOf:
+      - type: number
+        description: |
+          Intended coverage value for disablement.
+        example: 1500000
+      - type: boolean
+        description: |
+          Whether to include disablement coverage.
+        default: false
+  hospitalizationBenefit:
+    anyOf:
+        - type: number
+          description: |
+            Intended coverage value for hospitalization.
+          example: 1500000
+        - type: boolean
+          description: |
+            Whether to include hospitalization coverage.
+          default: false
+  leadId:
+    type: number
+    description: Lead Profile's identifier
+    example: 4321
+  agentId:
+    type: number
+    description: Agent Profile's identifier
+    example: 4321
+  referrer:
+    type: string
+    description: Source of the lead
+  paymentTerm:
+    type: string
+    description: Preferred Payment Term
+    enum:
+      - annual
+      - semi-annual
+      - quarterly
+      - monthly
+
+
+
+

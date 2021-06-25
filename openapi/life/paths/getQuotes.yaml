@@ -1,0 +1,28 @@
+post:
+  tags:
+    - Life Quotations
+  summary: Get Quotations
+  operationId: LifeGetQuotes
+  description: |
+    Request quotations
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/QuoteRequest.yaml
+    description: Quote Request resource
+    required: true
+  responses:
+    '200':
+      description: A quotation was generated successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            description: List of quotations
+            items:
+              allOf:
+                - $ref: ../schemas/Quote.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml

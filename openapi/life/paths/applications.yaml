@@ -1,0 +1,46 @@
+post:
+  tags:
+    - Life Applications
+  summary: Apply
+  operationId: LifeApply
+  description: |
+    Apply for cover
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/Application.yaml
+    description: Application resource
+    required: true
+  responses:
+    '200':
+      description: An application was submitted successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Application.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+get:
+  tags:
+    - Life Applications
+  summary: List All Applications
+  operationId: LifeListApplications
+  description: |
+    Retreive a list of all applications
+  responses:
+    '200':
+      description: A list of applications was retrieved successfully
+      content:
+        application/json:
+          schema:
+            type: array
+            description: List of applications
+            items:
+              allOf:
+                - $ref: ../schemas/Application.yaml
+                - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+                - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml

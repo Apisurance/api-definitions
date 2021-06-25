@@ -9,9 +9,9 @@ parameters:
 
 post:
   tags:
-    - Auto Policies
+    - Life Policies
   summary: Send a Copy of the Policy
-  operationId: AutoSendPolicy
+  operationId: LifeSendPolicy
   description: |
     Send a copy of the policy
   requestBody:

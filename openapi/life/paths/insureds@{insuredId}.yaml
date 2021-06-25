@@ -1,0 +1,63 @@
+parameters:
+  - name: insuredId
+    in: path
+    description: The Insured's identifier
+    required: true
+    schema:
+      type: string
+      example: 1a777b89-cbc1-47bf-8618-f071f18e8931
+
+get:
+  tags:
+    - Life Insureds
+  summary: Retrieve a Insured
+  operationId: GetInsured
+  description: |
+    Retrieve a managed insured
+  responses:
+    '200':
+      description: An insured was retrieved successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Insured.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+
+put:
+  tags:
+    - Life Insureds
+  summary: Modify Insured Info
+  operationId: ModifyInsured
+  description: |
+    Request modification of a insured's profile
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: ../schemas/Insured.yaml
+    required: true
+  responses:
+    '200':
+      description: An insured profile modification request was recorded successfully
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: ../schemas/Insured.yaml
+              - $ref: ../../shared/schemas/ModelWithCreateTimestamp.yaml
+              - $ref: ../../shared/schemas/ModelWithUpdateTimestamp.yaml
+    '422':
+      $ref: ../../shared/responses/ValidationErrorResponse.yaml
+
+delete:
+  tags:
+    - Life Insureds
+  summary: Delist a Insured
+  operationId: DelistInsured
+  description: |
+    Delist an insured from the system
+  responses:
+    '204':
+      description: An insured profile delisting request was recorded successfully
